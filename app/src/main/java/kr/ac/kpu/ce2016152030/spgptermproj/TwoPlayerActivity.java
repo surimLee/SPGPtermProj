@@ -1,5 +1,6 @@
 package kr.ac.kpu.ce2016152030.spgptermproj;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -12,4 +13,12 @@ public class TwoPlayerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_two_player);
     }
+
+    @Override
+    public void onBackPressed() {
+//        stopService(new Intent(getApplicationContext(), MusicService.class));
+        Intent intent = new Intent(TwoPlayerActivity.this, MainActivity.class);
+        startActivity(intent);
+    }
+
 }

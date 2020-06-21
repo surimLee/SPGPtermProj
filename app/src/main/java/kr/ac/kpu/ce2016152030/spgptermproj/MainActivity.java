@@ -18,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
 
         final MediaPlayer clickSound = MediaPlayer.create(this, R.raw.waterclick);
 
+        startService(new Intent(getApplicationContext(), MusicService.class));
+
         Button withFriend = findViewById(R.id.bt1);
         withFriend.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -25,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
                 clickSound.start();
                 Intent intent = new Intent(MainActivity.this, TwoPlayerActivity.class);
                 startActivity(intent);
-                startService(new Intent(getApplicationContext(), MusicService.class));
+//                startService(new Intent(getApplicationContext(), MusicService.class));
             }
         });
 
@@ -36,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
                 clickSound.start();
                 Intent intent = new Intent(MainActivity.this, OnePlayerActivity.class);
                 startActivity(intent);
-                startService(new Intent(getApplicationContext(), MusicService.class));
+//                startService(new Intent(getApplicationContext(), MusicService.class));
             }
         });
 
@@ -50,5 +52,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent a = new Intent(Intent.ACTION_MAIN);
+        a.addCategory(Intent.CATEGORY_HOME);
+        a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(a);
     }
 }

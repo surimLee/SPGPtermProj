@@ -30,6 +30,7 @@
         </activity>
 
         <service android:name=".MusicService"/>
+        <service android:name=".MusicService2"/>
 
     </application>
 
