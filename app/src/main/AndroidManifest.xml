@@ -16,6 +16,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".OnePlayerActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity android:name=".TwoPlayerActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity android:name=".SettingActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
     </application>
+
+
 
 </manifest>
