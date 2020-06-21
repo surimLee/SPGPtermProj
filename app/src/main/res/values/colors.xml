@@ -5,4 +5,6 @@
     <color name="colorAccent">#03DAC5</color>
     <color name="tint2">#80CCCCCC</color>
     <color name="transparent">#00F9F9FA</color>
+    <color name="cotext">#747474</color>
+    <color name="cotextred">#F76D6D</color>
 </resources>

@@ -21,8 +21,8 @@ import java.util.TimerTask;
 
 public class SelectActivity extends AppCompatActivity {
 
-    CharSequence player1 = "Player 1";
-    CharSequence player2 = "Player 2";
+    CharSequence player1 = "Player1";
+    CharSequence player2 = "Player2";
     public boolean selectedsingleplayer;
     boolean player1ax;
     @Override
