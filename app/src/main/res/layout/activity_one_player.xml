@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="#ABCCE8"
+    android:background="#E7E8EA"
     tools:context=".OnePlayerActivity">
 
     <TextView
@@ -47,10 +47,10 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="100dp"
-        android:background="@drawable/whiterec"
+        android:background="@drawable/bluerec"
         android:fontFamily="monospace"
-        android:textColor="#043162"
-        android:textSize="17sp"
+        android:textColor="#FFFFFF"
+        android:textSize="19sp"
         android:text="Continue" />
 
 

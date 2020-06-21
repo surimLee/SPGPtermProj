@@ -126,6 +126,7 @@ public class SceneActivity extends AppCompatActivity {
                 tracker[0][0] = zero;
             printBoard();
             winchecker();
+            cpuplay();
             flag++;
             buttonpressed[0][0]++;
         }
@@ -137,6 +138,7 @@ public class SceneActivity extends AppCompatActivity {
             else tracker[0][1] = zero;
             printBoard();
             winchecker();
+            cpuplay();
             buttonpressed[0][1]++;
             flag++;
         }
@@ -148,6 +150,7 @@ public class SceneActivity extends AppCompatActivity {
             else tracker[0][2] = zero;
             printBoard();
             winchecker();
+            cpuplay();
             buttonpressed[0][2]++;
             flag++;
         }
@@ -159,6 +162,7 @@ public class SceneActivity extends AppCompatActivity {
             else tracker[1][0] = zero;
             printBoard();
             winchecker();
+            cpuplay();
             ++buttonpressed[1][0];
             flag++;
         }
@@ -170,6 +174,7 @@ public class SceneActivity extends AppCompatActivity {
             else tracker[1][1] = zero;
             printBoard();
             winchecker();
+            cpuplay();
             ++buttonpressed[1][1];
             flag++;
         }
@@ -181,6 +186,7 @@ public class SceneActivity extends AppCompatActivity {
             else tracker[1][2] = zero;
             printBoard();
             winchecker();
+            cpuplay();
             ++buttonpressed[1][2];
             flag++;
         }
@@ -192,6 +198,7 @@ public class SceneActivity extends AppCompatActivity {
             else tracker[2][0] = zero;
             printBoard();
             winchecker();
+            cpuplay();
             ++buttonpressed[2][0];
             flag++;
         }
@@ -203,6 +210,7 @@ public class SceneActivity extends AppCompatActivity {
             else tracker[2][1] = zero;
             printBoard();
             winchecker();
+            cpuplay();
             ++buttonpressed[2][1];
             flag++;
         }
@@ -214,13 +222,269 @@ public class SceneActivity extends AppCompatActivity {
             else tracker[2][2] = zero;
             printBoard();
             winchecker();
+            cpuplay();
             ++buttonpressed[2][2];
             flag++;
         }
     }
 
 ////////////////////////////////////
-    ///////////////////////////////
+
+public void cpuplay() {
+    if ((selectedsingleplayer) && (win == 0)) {
+        final Handler handler = new Handler();
+        Timer t = new Timer();
+        t.schedule(new TimerTask() {
+            public void run() {
+                handler.post(new Runnable() {
+                    public void run() {
+                        if (ifcpuwin()) ;
+                        else if (ifopowin()) ;
+                        else if (emptycentre()) ;
+                        else if (emptycorner()) ;
+                        else emptyany();
+
+                        printBoard();
+                        winchecker();
+
+                        flag++;
+                    }
+                });
+            }
+        }, 110);
+        return;
+    }
+}
+
+    public boolean ifcpuwin() {
+        for (i = 0; i < 8; i++) {
+            if (sum[i] == 2 * zero) {
+                if (i == 0) {
+                    for (int x = 0; x < 3; x++)
+                        if (tracker[0][x] == 0)
+                            tracker[0][x] = zero;
+                }
+                if (i == 1) {
+                    for (int x = 0; x < 3; x++)
+                        if (tracker[1][x] == 0)
+                            tracker[1][x] = zero;
+                }
+                if (i == 2) {
+                    for (int x = 0; x < 3; x++)
+                        if (tracker[2][x] == 0)
+                            tracker[2][x] = zero;
+                }
+                if (i == 3) {
+                    for (int x = 0; x < 3; x++)
+                        if (tracker[x][0] == 0)
+                            tracker[x][0] = zero;
+                }
+                if (i == 4) {
+
+                    for (int x = 0; x < 3; x++)
+                        if (tracker[x][1] == 0)
+                            tracker[x][1] = zero;
+                }
+                if (i == 5) {
+
+                    for (int x = 0; x < 3; x++)
+                        if (tracker[x][2] == 0)
+                            tracker[x][2] = zero;
+                }
+                if (i == 6) {
+
+                    for (int y = 0; y < 3; y++)
+                        for (int x = 0; x < 3; x++)
+                            if (x == y)
+                                if (tracker[x][y] == 0)
+                                    tracker[x][y] = zero;
+                }
+                if (i == 7) {
+                    if (tracker[0][2] == 0)
+                        tracker[0][2] = zero;
+                    else if (tracker[1][1] == 0)
+                        tracker[1][1] = zero;
+                    else tracker[2][0] = zero;
+                }
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean ifopowin() {
+        for (i = 0; i < 8; i++) {
+            if (sum[i] == 2 * ax) {
+                if (i == 0) {
+                    for (int x = 0; x < 3; x++)
+                        if (tracker[0][x] == 0) {
+                            tracker[0][x] = zero;
+                            buttonpressed[0][x]++;
+                        }
+                }
+
+                if (i == 1) {
+                    for (int x = 0; x < 3; x++)
+                        if (tracker[1][x] == 0) {
+                            tracker[1][x] = zero;
+                            buttonpressed[1][x]++;
+                        }
+                }
+                if (i == 2) {
+                    for (int x = 0; x < 3; x++)
+                        if (tracker[2][x] == 0) {
+                            tracker[2][x] = zero;
+                            buttonpressed[2][x]++;
+                        }
+                }
+
+                if (i == 3) {
+                    for (int x = 0; x < 3; x++)
+                        if (tracker[x][0] == 0) {
+                            tracker[x][0] = zero;
+                            buttonpressed[x][0]++;
+                        }
+                }
+
+                if (i == 4) {
+
+                    for (int x = 0; x < 3; x++)
+                        if (tracker[x][1] == 0) {
+                            tracker[x][1] = zero;
+                            buttonpressed[x][1]++;
+                        }
+                }
+
+                if (i == 5) {
+
+                    for (int x = 0; x < 3; x++)
+                        if (tracker[x][2] == 0) {
+                            tracker[x][2] = zero;
+                            buttonpressed[x][2]++;
+                        }
+                }
+                if (i == 6) {
+
+                    for (int y = 0; y < 3; y++)
+                        for (int x = 0; x < 3; x++)
+                            if (x == y)
+                                if (tracker[x][y] == 0) {
+                                    tracker[x][y] = zero;
+                                    buttonpressed[x][y]++;
+                                }
+                }
+                if (i == 7) {
+                    if (tracker[0][2] == 0) {
+                        tracker[0][2] = zero;
+                        buttonpressed[0][2]++;
+                    } else if (tracker[1][1] == 0) {
+                        tracker[1][1] = zero;
+                        buttonpressed[1][1]++;
+                    } else {
+                        tracker[2][0] = zero;
+                        buttonpressed[2][0]++;
+                    }
+                }
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public boolean emptycentre() {
+        if (tracker[1][1] == 0) {
+            tracker[1][1] = zero;
+            buttonpressed[1][1]++;
+            return true;
+        }
+        return false;
+    }
+
+    public boolean emptycorner() {
+        for (int i = 0; i < 3; i++) {
+            if (tracker[0][i] == ax) {
+                if (tracker[0][0] == 0) {
+                    tracker[0][0] = zero;
+                    buttonpressed[0][0]++;
+                    return true;
+                }
+                if (tracker[0][2] == 0) {
+                    tracker[0][2] = zero;
+                    buttonpressed[0][2]++;
+                    return true;
+                }
+            }
+        }
+        for (int i = 0; i < 3; i++) {
+            if (tracker[2][i] == ax) {
+                if (tracker[2][0] == 0) {
+                    tracker[2][0] = zero;
+                    buttonpressed[2][0]++;
+                    return true;
+                }
+                if (tracker[2][2] == 0) {
+                    tracker[2][2] = zero;
+                    buttonpressed[2][2]++;
+                    return true;
+                }
+            }
+        }
+        for (int i = 0; i < 3; i++) {
+            if (tracker[i][0] == ax) {
+                if (tracker[0][0] == 0) {
+                    tracker[0][0] = zero;
+                    buttonpressed[0][0]++;
+                    return true;
+                }
+                if (tracker[2][0] == 0) {
+                    tracker[2][0] = zero;
+                    buttonpressed[2][0]++;
+                    return true;
+                }
+            }
+        }
+        for (int i = 0; i < 3; i++) {
+            if (tracker[i][2] == ax) {
+                if (tracker[0][2] == 0) {
+                    tracker[0][2] = zero;
+                    buttonpressed[0][2]++;
+                    return true;
+                }
+                if (tracker[2][2] == 0) {
+                    tracker[2][2] = zero;
+                    buttonpressed[2][2]++;
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public void emptyany() {
+        if (ctrflag == 0)
+            while (true) {
+                int x = rand();
+                int y = rand();
+
+                if (tracker[x][y] == 0) {
+                    tracker[x][y] = zero;
+                    buttonpressed[x][y]++;
+                    return;
+                }
+            }
+        for (int x = 0; x < 3; x++)
+            for (int y = 0; y < 3; y++)
+                if (tracker[x][y] == 0) {
+                    tracker[x][y] = zero;
+                    buttonpressed[x][y]++;
+                    return;
+                }
+    }
+
+    public int rand() {
+        return r.nextInt(3);
+    }
 
     public void printBoard() {
         ImageView q1, q2, q3, q4, q5, q6, q7, q8, q9;
