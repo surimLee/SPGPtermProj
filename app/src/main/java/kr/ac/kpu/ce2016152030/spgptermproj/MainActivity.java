@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, TwoPlayerActivity.class);
                 startActivity(intent);
+                startService(new Intent(getApplicationContext(), MusicService.class));
             }
         });
 
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, OnePlayerActivity.class);
                 startActivity(intent);
+                startService(new Intent(getApplicationContext(), MusicService.class));
             }
         });
 
