@@ -834,6 +834,8 @@ public void cpuplay() {
             flag = (game + 1) % 2;
             currentgamedonechecker = 0;
 
+            if (selectedsingleplayer && (game % 2 == 0))
+                cpuplay();
         }
     }
 
