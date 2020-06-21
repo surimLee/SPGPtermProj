@@ -41,7 +41,7 @@
         android:textColorHint="#BABABA"/>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn_continue3"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
