@@ -36,8 +36,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 clickSound.start();
-                Intent intent = new Intent(MainActivity.this, OnePlayerActivity.class);
-                startActivity(intent);
+                Intent intent2 = new Intent(MainActivity.this, OnePlayerActivity.class);
+                startActivity(intent2);
 //                startService(new Intent(getApplicationContext(), MusicService.class));
             }
         });
@@ -47,8 +47,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 clickSound.start();
-                Intent intent = new Intent(MainActivity.this, SettingActivity.class);
-                startActivity(intent);
+                Intent intent3 = new Intent(MainActivity.this, SettingActivity.class);
+                startActivity(intent3);
             }
         });
 

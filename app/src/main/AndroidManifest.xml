@@ -29,6 +29,10 @@
             android:screenOrientation="portrait">
         </activity>
 
+        <activity android:name=".SelectActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
         <service android:name=".MusicService"/>
         <service android:name=".MusicService2"/>
 
