@@ -148,6 +148,8 @@ public class SelectActivity extends AppCompatActivity {
                             player1 = players1[0];
                             player2 = players1[1];
 
+                            stopService(new Intent(getApplicationContext(), MusicService.class));
+                            startService(new Intent(getApplicationContext(), MusicService2.class));
 
                             Intent i = new Intent(SelectActivity.this, SceneActivity.class);
                             CharSequence[] players = {player1, player2};
