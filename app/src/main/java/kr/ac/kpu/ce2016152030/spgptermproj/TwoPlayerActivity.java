@@ -1,6 +1,7 @@
 package kr.ac.kpu.ce2016152030.spgptermproj;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -25,6 +26,7 @@ public class TwoPlayerActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_two_player);
+        final MediaPlayer clickSound = MediaPlayer.create(this, R.raw.waterclick);
 
         plyr1 = (EditText)findViewById(R.id.player1);
         plyr1.addTextChangedListener(new TextWatcher() {
@@ -72,6 +74,7 @@ public class TwoPlayerActivity extends AppCompatActivity {
                 i.putExtra("playersnames", players);
 
                 startActivity(i);
+                clickSound.start();
             }
         });
 

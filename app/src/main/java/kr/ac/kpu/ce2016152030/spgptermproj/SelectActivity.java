@@ -3,6 +3,7 @@ package kr.ac.kpu.ce2016152030.spgptermproj;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -28,6 +29,7 @@ public class SelectActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select);
+        final MediaPlayer clickSound = MediaPlayer.create(this, R.raw.waterclick);
 
         CharSequence[] players = getIntent().getCharSequenceArrayExtra("playersnames");
         player1 = players[0];
@@ -90,7 +92,6 @@ public class SelectActivity extends AppCompatActivity {
                 imageView.setImageResource(R.drawable.x);
                 imageView.setColorFilter(getApplicationContext().getResources().getColor(R.color.tint2));
 
-
             }
         });
 
@@ -105,6 +106,7 @@ public class SelectActivity extends AppCompatActivity {
                 imageView.setImageResource(R.drawable.x);
                 imageView2.setColorFilter(getApplicationContext().getResources().getColor(R.color.tint2));
 
+
             }
         });
 
@@ -118,6 +120,7 @@ public class SelectActivity extends AppCompatActivity {
                 imageView2.setColorFilter(getApplicationContext().getResources().getColor(R.color.transparent));
                 imageView.setColorFilter(getApplicationContext().getResources().getColor(R.color.tint2));
 
+                clickSound.start();
 
             }
         });
@@ -131,6 +134,8 @@ public class SelectActivity extends AppCompatActivity {
                 imageView.setImageResource(R.drawable.x);
                 imageView.setColorFilter(getApplicationContext().getResources().getColor(R.color.transparent));
                 imageView2.setColorFilter(getApplicationContext().getResources().getColor(R.color.tint2));
+
+                clickSound.start();
 
             }
         });
@@ -157,6 +162,8 @@ public class SelectActivity extends AppCompatActivity {
                             i.putExtra("player1ax", player1ax);
                             i.putExtra("selectedsingleplayer", selectedsingleplayer);
                             startActivity(i);
+
+                            clickSound.start();
                         }
                     });
                 }
