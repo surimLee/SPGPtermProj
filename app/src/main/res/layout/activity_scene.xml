@@ -18,10 +18,10 @@
         android:layout_marginRight="10dp"
         android:layout_marginBottom="7dp"
         android:layout_toLeftOf="@id/score"
-        android:text="QWERTY"
+        android:text="Qwerty"
         android:fontFamily="monospace"
         android:textColor="#323232"
-        android:textSize="22sp"
+        android:textSize="20sp"
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="10dp"
         android:textAlignment="center"
@@ -36,11 +36,11 @@
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
         android:layout_toRightOf="@id/score"
-        android:text="COMPUTER"
+        android:text="Computer"
         android:fontFamily="monospace"
         android:textColor="#323232"
         android:textAlignment="center"
-        android:textSize="22sp"
+        android:textSize="20sp"
         android:gravity="center_horizontal" />
 
     <androidx.cardview.widget.CardView

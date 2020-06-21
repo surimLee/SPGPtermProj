@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="#E8EAEC"
+    android:background="#E8E8EC"
     tools:context=".OnePlayerActivity">
 
     <TextView
