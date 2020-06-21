@@ -3,6 +3,7 @@ package kr.ac.kpu.ce2016152030.spgptermproj;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,10 +16,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        final MediaPlayer clickSound = MediaPlayer.create(this, R.raw.waterclick);
+
         Button withFriend = findViewById(R.id.bt1);
         withFriend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                clickSound.start();
                 Intent intent = new Intent(MainActivity.this, TwoPlayerActivity.class);
                 startActivity(intent);
                 startService(new Intent(getApplicationContext(), MusicService.class));
@@ -29,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         withAi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                clickSound.start();
                 Intent intent = new Intent(MainActivity.this, OnePlayerActivity.class);
                 startActivity(intent);
                 startService(new Intent(getApplicationContext(), MusicService.class));
@@ -39,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                clickSound.start();
                 Intent intent = new Intent(MainActivity.this, SettingActivity.class);
                 startActivity(intent);
             }
