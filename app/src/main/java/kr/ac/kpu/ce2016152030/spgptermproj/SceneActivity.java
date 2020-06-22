@@ -119,6 +119,9 @@ public class SceneActivity extends AppCompatActivity {
 
 
     public void c1x1(View view) {
+        final MediaPlayer ScoreSound = MediaPlayer.create(this, R.raw.waterclick);
+        ScoreSound.start();
+
         if (win == 0 && buttonpressed[0][0] == 0) {
             if (flag % 2 == 0)
                 tracker[0][0] = ax;
@@ -133,6 +136,9 @@ public class SceneActivity extends AppCompatActivity {
     }
 
     public void c1x2(View view) {
+        final MediaPlayer ScoreSound = MediaPlayer.create(this, R.raw.waterclick);
+        ScoreSound.start();
+
         if (win == 0 && buttonpressed[0][1] == 0) {
             if (flag % 2 == 0) tracker[0][1] = ax;
             else tracker[0][1] = zero;
@@ -145,6 +151,9 @@ public class SceneActivity extends AppCompatActivity {
     }
 
     public void c1x3(View view) {
+        final MediaPlayer ScoreSound = MediaPlayer.create(this, R.raw.waterclick);
+        ScoreSound.start();
+
         if (win == 0 && buttonpressed[0][2] == 0) {
             if (flag % 2 == 0) tracker[0][2] = ax;
             else tracker[0][2] = zero;
@@ -157,6 +166,9 @@ public class SceneActivity extends AppCompatActivity {
     }
 
     public void c2x1(View view) {
+        final MediaPlayer ScoreSound = MediaPlayer.create(this, R.raw.waterclick);
+        ScoreSound.start();
+
         if (win == 0 && buttonpressed[1][0] == 0) {
             if (flag % 2 == 0) tracker[1][0] = ax;
             else tracker[1][0] = zero;
@@ -169,6 +181,9 @@ public class SceneActivity extends AppCompatActivity {
     }
 
     public void c2x2(View view) {
+        final MediaPlayer ScoreSound = MediaPlayer.create(this, R.raw.waterclick);
+        ScoreSound.start();
+
         if (win == 0 && buttonpressed[1][1] == 0) {
             if (flag % 2 == 0) tracker[1][1] = ax;
             else tracker[1][1] = zero;
@@ -181,6 +196,9 @@ public class SceneActivity extends AppCompatActivity {
     }
 
     public void c2x3(View view) {
+        final MediaPlayer ScoreSound = MediaPlayer.create(this, R.raw.waterclick);
+        ScoreSound.start();
+
         if (win == 0 && buttonpressed[1][2] == 0) {
             if (flag % 2 == 0) tracker[1][2] = ax;
             else tracker[1][2] = zero;
@@ -189,10 +207,14 @@ public class SceneActivity extends AppCompatActivity {
             cpuplay();
             ++buttonpressed[1][2];
             flag++;
+
         }
     }
 
     public void c3x1(View view) {
+        final MediaPlayer ScoreSound = MediaPlayer.create(this, R.raw.waterclick);
+        ScoreSound.start();
+
         if (win == 0 && buttonpressed[2][0] == 0) {
             if (flag % 2 == 0) tracker[2][0] = ax;
             else tracker[2][0] = zero;
@@ -205,6 +227,9 @@ public class SceneActivity extends AppCompatActivity {
     }
 
     public void c3x2(View view) {
+        final MediaPlayer ScoreSound = MediaPlayer.create(this, R.raw.waterclick);
+        ScoreSound.start();
+
         if (win == 0 && buttonpressed[2][1] == 0) {
             if (flag % 2 == 0) tracker[2][1] = ax;
             else tracker[2][1] = zero;
@@ -217,6 +242,9 @@ public class SceneActivity extends AppCompatActivity {
     }
 
     public void c3x3(View view) {
+        final MediaPlayer ScoreSound = MediaPlayer.create(this, R.raw.waterclick);
+        ScoreSound.start();
+
         if (win == 0 && buttonpressed[2][2] == 0) {
             if (flag % 2 == 0) tracker[2][2] = ax;
             else tracker[2][2] = zero;
@@ -552,8 +580,7 @@ public void cpuplay() {
             if (sum[i] == 3 || sum[i] == 30) {
 
 
-                final MediaPlayer ScoreSound = MediaPlayer.create(this, R.raw.scoresound);
-                ScoreSound.start();
+
 
                 if(Vibration) {
                     Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);

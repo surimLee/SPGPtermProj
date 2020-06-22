@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
+        stopService(new Intent(getApplicationContext(), MusicService.class));
         super.onBackPressed();
         Intent a = new Intent(Intent.ACTION_MAIN);
         a.addCategory(Intent.CATEGORY_HOME);
