@@ -498,7 +498,7 @@ public void cpuplay() {
 
     public void printBoard() {
 
-        final MediaPlayer ScoreSound = MediaPlayer.create(this, R.raw.waterclick);
+        final MediaPlayer ScoreSound = MediaPlayer.create(this, R.raw.ingameclick);
         ScoreSound.start();
 
         ImageView q1, q2, q3, q4, q5, q6, q7, q8, q9;
@@ -512,9 +512,6 @@ public void cpuplay() {
         q7 = (ImageView) findViewById(R.id.c31);
         q8 = (ImageView) findViewById(R.id.c32);
         q9 = (ImageView) findViewById(R.id.c33);
-
-        final MediaPlayer ingameclick = MediaPlayer.create(this, R.raw.ingameclick);
-        ingameclick.start();
 
         if (tracker[0][0] == 1) q1.setImageResource(R.drawable.xs);
         if (tracker[0][0] == 10) q1.setImageResource(R.drawable.os);
@@ -565,7 +562,8 @@ public void cpuplay() {
         for (int i = 0; i < 8; i++)
             if (sum[i] == 3 || sum[i] == 30) {
 
-
+                final MediaPlayer ScoreSound = MediaPlayer.create(this, R.raw.scoresound);
+                ScoreSound.start();
 
 
                 if(Vibration) {
